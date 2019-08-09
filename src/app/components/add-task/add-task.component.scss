@@ -1,0 +1,10 @@
+select {
+  border: none;
+  background: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  &:focus {
+    border-bottom: 1px solid #3f51b5;
+    outline: none;
+  }
+}

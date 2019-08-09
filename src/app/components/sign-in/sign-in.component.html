@@ -1,0 +1,24 @@
+<div class="container m">
+  <h1 class="text-center">Sign <span class="text-blue">In</span></h1>
+
+  <form class="form" (ngSubmit)="onSubmit()">
+    <app-error *ngIf="error"></app-error>
+    <div class="form-group">
+      <input
+        [(ngModel)]="username"
+        name="username"
+        type="text"
+        placeholder="Your name"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        [(ngModel)]="password"
+        type="password"
+        name="password"
+        placeholder="Password"
+      />
+    </div>
+    <div class="text-center"><button type="submit">SignIn</button></div>
+  </form>
+</div>

@@ -1,0 +1,35 @@
+<div class="container m">
+  <h1 class="text-center">Assign <span class="text-blue">Task</span></h1>
+
+  <form class="form" (ngSubmit)="onSubmit()">
+    <app-error *ngIf="error"></app-error>
+    <div class="form-group">
+      <input name="title" [(ngModel)]="title" type="text" placeholder="Task" />
+    </div>
+    <div class="form-group">
+      <input
+        type="date"
+        [(ngModel)]="remainder_date"
+        name="remainder_date"
+        placeholder="Reminder Date"
+      />
+    </div>
+    <div class="form-group">
+      <label for="remind" id="lab">Assign To</label>
+      <select name="remind_to" id="remind" [(ngModel)]="remind_to">
+        <option *ngFor="let user of users" [value]="user.username">
+          {{ user.username }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        name="created_by"
+        [(ngModel)]="created_by"
+        placeholder="Your name"
+      />
+    </div>
+    <div class="text-center"><button type="submit">Submit</button></div>
+  </form>
+</div>

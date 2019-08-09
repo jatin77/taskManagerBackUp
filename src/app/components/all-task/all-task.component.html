@@ -1,0 +1,21 @@
+<div class="container m">
+  <h1 class="text-center">All <span class="text-blue">Task's</span></h1>
+  <div class="container-sm">
+    <ng-container *ngFor="let task of tasks">
+      <div class="card ">
+        <div class="card-head my-sm">
+          <h4>assined to {{ task.remind_to }}</h4>
+        </div>
+        <div class="card-content">
+          {{ task.title }}
+        </div>
+        <div class="card-footer text-right my-sm">
+          <p>
+            <small>Assined By</small
+            ><span class="text-blue"> {{ task.created_by }}</span>
+          </p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

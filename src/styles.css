@@ -1,0 +1,274 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+button {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+input {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+input::-webkit-input-placeholder {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+input:-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+input::-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+input::placeholder {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.container {
+  width: 1200px !important;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 70% !important;
+  }
+}
+
+@media (min-width: 600px) {
+  .container {
+    width: 85% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90% !important;
+  }
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-space-btwn {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-def {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.text-black {
+  color: #36362e;
+}
+
+.bg-blue {
+  background: #3f51b5;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-blue {
+  color: #3f51b5;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-grey {
+  color: #ccc;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.goto:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.activeLink {
+  color: #fff;
+}
+
+.m {
+  margin: 2rem auto 4rem auto;
+}
+
+.form {
+  margin-top: 2rem;
+  width: 600px;
+  max-width: 80%;
+  margin: 2rem auto 0 auto;
+}
+
+.form label {
+  color: #ccc;
+}
+
+.form button {
+  background: #3f51b5;
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form button:hover {
+  -webkit-box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.3);
+}
+
+.form button:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
+  border-bottom: none;
+}
+
+.form-group {
+  margin: 2rem 0;
+}
+
+.form-group input {
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+  border-bottom: #ccc 1px solid;
+  outline: none;
+}
+
+.form-group input[type="date"] {
+  color: #ccc;
+}
+
+.form-group input[type="date"]:focus {
+  color: #3f51b5;
+}
+
+.form-group input::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+.form-group input:-ms-input-placeholder {
+  color: #ccc;
+}
+
+.form-group input::-ms-input-placeholder {
+  color: #ccc;
+}
+
+.form-group input::placeholder {
+  color: #ccc;
+}
+
+.form-group input:focus {
+  border-bottom: #3f51b5 1px solid;
+  outline: none;
+}
+
+.form-group input:focus::-webkit-input-placeholder {
+  color: #3f51b5;
+}
+
+.form-group input:focus:-ms-input-placeholder {
+  color: #3f51b5;
+}
+
+.form-group input:focus::-ms-input-placeholder {
+  color: #3f51b5;
+}
+
+.form-group input:focus::placeholder {
+  color: #3f51b5;
+}
+
+.card {
+  -webkit-box-shadow: 0 10px 35px rgba(50, 50, 93, 0.1), 0 2px 15px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 10px 35px rgba(50, 50, 93, 0.1), 0 2px 15px rgba(0, 0, 0, 0.07);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.container-sm {
+  width: 600px;
+  max-width: 100%;
+  margin: 2rem auto;
+}
+
+.my-sm {
+  margin: 0.5rem 0;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.border-grey {
+  background-color: #ccc;
+  height: 0.3px;
+  width: 100%;
+}
+
+.bg-danger {
+  background: crimson;
+}
+
+.py-1 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+/*# sourceMappingURL=styles.css.map */
