@@ -6,14 +6,24 @@ import { AllTaskComponent } from "./components/all-task/all-task.component";
 import { UsersComponent } from "./components/users/users.component";
 import { NotificationsComponent } from "./components/notifications/notifications.component";
 import { UserDetailComponent } from "./components/user-detail/user-detail.component";
+import { AuthGuard } from "./authGuard/auth.guard";
 
 const routes: Routes = [
-  { path: "", component: SignInComponent },
-  { path: "addTask", component: AddTaskComponent },
-  { path: "allTask", component: AllTaskComponent },
-  { path: "users", component: UsersComponent },
-  { path: "notifications", component: NotificationsComponent },
-  { path: "userDetail/:id", component: UserDetailComponent }
+  { path: "", redirectTo: "/signIn", pathMatch: "full" },
+  { path: "signIn", component: SignInComponent },
+  { path: "addTask", component: AddTaskComponent, canActivate: [AuthGuard] },
+  { path: "allTask", component: AllTaskComponent, canActivate: [AuthGuard] },
+  { path: "users", component: UsersComponent, canActivate: [AuthGuard] },
+  {
+    path: "notifications",
+    component: NotificationsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "userDetail/:id",
+    component: UserDetailComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

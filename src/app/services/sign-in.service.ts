@@ -12,8 +12,11 @@ const httpOptions = {
 export class SignInService {
   signInUrl: string = "http://localhost:8000/api-token-auth/";
   constructor(private http: HttpClient) {}
+
   signIn(authDetail): Observable<any> {
-    console.log(authDetail);
     return this.http.post(this.signInUrl, authDetail, httpOptions);
+  }
+  getToken() {
+    return localStorage.getItem("token");
   }
 }

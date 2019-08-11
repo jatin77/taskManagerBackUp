@@ -1,6 +1,11 @@
 <header class="bg-blue py-def footer">
   <div class="container flex flex-space-btwn flex-align-center">
-    <a class="goto text-grey" routerLinkActive="activeLink" routerLink="/">
+    <a
+      class="goto text-grey"
+      routerLinkActive="activeLink"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLink="/signIn"
+    >
       <i class="fas fa-user"></i
     ></a>
     <a

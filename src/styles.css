@@ -153,8 +153,8 @@ input::placeholder {
 .form button {
   background: #3f51b5;
   color: #fff;
-  padding: 0.8rem;
-  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.3rem;
   outline: none;
   border: none;
   cursor: pointer;
@@ -270,5 +270,27 @@ input::placeholder {
 .py-1 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.hello-btn {
+  background: #3f51b5;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+}
+
+.hello-btn:hover {
+  -webkit-box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.3);
+}
+
+.hello-btn:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
+  border-bottom: none;
 }
 /*# sourceMappingURL=styles.css.map */
