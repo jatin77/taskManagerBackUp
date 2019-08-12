@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 })
 export class SignInComponent implements OnInit {
   error: boolean = false;
-  hello: boolean = false;
+  hello: boolean = true;
   username: string = "";
   password: string = "";
   constructor(private signInService: SignInService, private router: Router) {}
@@ -36,7 +36,7 @@ export class SignInComponent implements OnInit {
           console.log(response, "success");
           localStorage.setItem("token", response.token);
           this.router.navigate(["/allTask"]);
-          this.hello = true;
+          this.hello = false;
         },
         error => {
           console.log("error");

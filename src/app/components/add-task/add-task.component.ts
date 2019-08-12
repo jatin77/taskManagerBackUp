@@ -14,42 +14,30 @@ export class AddTaskComponent implements OnInit {
   displayTasksPage: boolean = false;
   users: Users[];
   title: string = "";
-  remind_to: string = "";
-  created_by: string = "";
+  remind_to: number = null;
+  created_by: number = null;
   remainder_date: string = "";
-  created_date: Date = new Date();
+  created_date: string = "";
+  id: number = Math.floor(Math.random() * 100);
   constructor(
     private userService: UserService,
     private taskService: TaskService
   ) {}
 
   ngOnInit() {
-    // this.userService.getUsers().subscribe(users => (this.users = users));
-    this.users = this.getUsers();
+    this.userService.getUsers().subscribe(users => (this.users = users));
   }
-  getUsers() {
-    return [
-      {
-        id: 1,
-        username: "username1",
-        first_name: "first name1",
-        last_name: "last name1"
-      }
-    ];
-  }
+
   clearFields() {
     this.title = "";
-    this.remind_to = "";
-    this.remainder_date = "";
-    this.created_date = new Date();
-    this.created_by = "";
+    this.remind_to = null;
+    this.remainder_date = null;
   }
   onSubmit = () => {
     if (
       this.title === "" ||
-      this.remind_to === "" ||
-      this.remainder_date === "" ||
-      this.created_by === ""
+      this.remind_to === null ||
+      this.remainder_date === null
     ) {
       console.log("error");
       this.error = true;
@@ -59,17 +47,21 @@ export class AddTaskComponent implements OnInit {
     } else {
       let task = {
         title: this.title,
-        created_by: this.created_by,
-        remainder_date: this.remainder_date,
         remind_to: this.remind_to,
-        created_date: new Date()
+        remainder_date: this.remainder_date
       };
-      console.log(task);
+
       this.taskService.addTask(task).subscribe(
         response => {
-          console.log("task assigned");
+          console.log("task assigned", task);
         },
-        error => console.log("error")
+        error => {
+          console.log("error", task);
+          this.error = true;
+          setTimeout(() => {
+            this.error = false;
+          }, 5000);
+        }
       );
       this.clearFields();
     }

@@ -127,7 +127,7 @@ input::placeholder {
     width: 100%;
     border-bottom: #ccc 1px solid;
     outline: none;
-    &[type="date"] {
+    &[type="datetime-local"] {
       color: $primary-grey;
       &:focus {
         color: $primary-blue;

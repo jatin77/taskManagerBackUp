@@ -4,9 +4,13 @@
   <div class="container-sm">
     <div class="card ">
       <div class="card-head my-sm text-center">
-        <ng-container *ngFor="let user of users">
+        <ng-container *ngFor="let user of users; trackBy: trackByFunction">
           <div>
-            <a routerLink="/userDetail/{{ user.username }}" class=" text-black">
+            <a
+              (click)="showUserDetail(user.id)"
+              routerLink="/userDetail/{{ user.username }}"
+              class=" text-black"
+            >
               {{ user.username }}
             </a>
             <div class=" my-1"></div>

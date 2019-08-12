@@ -7,29 +7,23 @@
       <input name="title" [(ngModel)]="title" type="text" placeholder="Task" />
     </div>
     <div class="form-group">
+      <label for="rd">Reminder Date</label>
       <input
-        type="date"
+        type="datetime-local"
+        id="rd"
         [(ngModel)]="remainder_date"
         name="remainder_date"
-        placeholder="Reminder Date"
       />
     </div>
     <div class="form-group">
       <label for="remind" id="lab">Assign To</label>
       <select name="remind_to" id="remind" [(ngModel)]="remind_to">
-        <option *ngFor="let user of users" [value]="user.username">
+        <option *ngFor="let user of users" [ngValue]="user.id">
           {{ user.username }}
         </option>
       </select>
     </div>
-    <div class="form-group">
-      <input
-        type="text"
-        name="created_by"
-        [(ngModel)]="created_by"
-        placeholder="Your name"
-      />
-    </div>
+
     <div class="text-center"><button type="submit">Submit</button></div>
   </form>
 </div>

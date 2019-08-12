@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
   providedIn: "root"
 })
 export class UserService {
+  showSelectedUser;
   getUserUrl: string = "http://127.0.0.1:8000/api/users/";
 
   constructor(private http: HttpClient) {}

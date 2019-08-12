@@ -1,13 +1,23 @@
 <div class="container m">
   <h1 class="text-center">All <span class="text-blue">Task's</span></h1>
+  <!-- <ng-template *ngIf="displayTasks; else noTasks"> -->
   <div class="container-sm">
-    <ng-container *ngFor="let task of tasks">
+    <ng-container *ngFor="let task of tasks; trackBy: trackByFunction">
       <div class="card ">
         <div class="card-head my-sm">
           <h4>assined to {{ task.remind_to }}</h4>
         </div>
         <div class="card-content">
           {{ task.title }}
+        </div>
+        <div class="card-footer text-right my-sm">
+          <p>
+            <small
+              >Reminder Date<span class="text-blue">
+                {{ task.remainder_date }}</span
+              ></small
+            >
+          </p>
         </div>
         <div class="card-footer text-right my-sm">
           <p>
@@ -18,4 +28,14 @@
       </div>
     </ng-container>
   </div>
+  <!-- </ng-template> -->
+  <!-- <ng-template #noTasks>
+    <div class="container-sm">
+      <div class="card">
+        <div class="card-head my-sm">
+          <h3>No tasks for now.</h3>
+        </div>
+      </div>
+    </div>
+  </ng-template> -->
 </div>

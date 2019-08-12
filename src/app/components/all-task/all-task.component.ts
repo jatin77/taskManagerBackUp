@@ -8,11 +8,13 @@ import { TaskService } from "src/app/services/task.service";
   styleUrls: ["./all-task.component.scss"]
 })
 export class AllTaskComponent implements OnInit {
-  displayTaskpage: boolean = false;
   tasks: Task[];
   constructor(private taskService: TaskService) {}
 
   ngOnInit() {
     this.taskService.getTasks().subscribe(tasks => (this.tasks = tasks));
+  }
+  trackByFunction(index, item) {
+    return index;
   }
 }

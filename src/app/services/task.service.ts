@@ -13,19 +13,19 @@ const httpOptions = {
   providedIn: "root"
 })
 export class TaskService {
-  gettaskUrl: string = "";
-  postTaskUrl: string = "";
+  taskUrl: string = "http://127.0.0.1:8000/api/create-task/";
+  showSelectedTask;
   constructor(private http: HttpClient) {}
 
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.gettaskUrl, {
+    return this.http.get<Task[]>(this.taskUrl, {
       headers: new HttpHeaders({
         Authorization: "Bearer " + localStorage.getItem("token")
       })
     });
   }
 
-  addTask(task): Observable<Task> {
-    return this.http.post<Task>(this.postTaskUrl, task, httpOptions);
+  addTask(task): Observable<any> {
+    return this.http.post(this.taskUrl, task, httpOptions);
   }
 }
