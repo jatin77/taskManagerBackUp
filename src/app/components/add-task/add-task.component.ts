@@ -1,15 +1,24 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  OnDestroy
+} from "@angular/core";
 import { Users } from "src/app/models/users";
 import { Task } from "src/app/models/task";
 import { UserService } from "src/app/services/user.service";
 import { TaskService } from "src/app/services/task.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-add-task",
   templateUrl: "./add-task.component.html",
   styleUrls: ["./add-task.component.scss"]
 })
-export class AddTaskComponent implements OnInit {
+export class AddTaskComponent implements OnInit, OnDestroy {
+  private addTaskSubscription: Subscription;
+
   error: boolean = false;
   displayTasksPage: boolean = false;
   users: Users[];
@@ -25,7 +34,9 @@ export class AddTaskComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(users => (this.users = users));
+    this.addTaskSubscription = this.userService
+      .getUsers()
+      .subscribe(users => (this.users = users));
   }
 
   clearFields() {
@@ -66,4 +77,7 @@ export class AddTaskComponent implements OnInit {
       this.clearFields();
     }
   };
+  ngOnDestroy(): void {
+    this.addTaskSubscription.unsubscribe();
+  }
 }
