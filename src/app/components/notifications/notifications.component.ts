@@ -20,6 +20,8 @@ export class NotificationsComponent implements OnInit {
     this.notifyService
       .getNotifications()
       .subscribe(notifications => (this.notifications = notifications));
-    console.log(this.notifications);
   };
+  trackByFunction(index, item) {
+    return index;
+  }
 }

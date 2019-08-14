@@ -20,6 +20,8 @@ export class AddTaskComponent implements OnInit, OnDestroy {
   private addTaskSubscription: Subscription;
 
   error: boolean = false;
+
+  success: boolean = false;
   displayTasksPage: boolean = false;
   users: Users[];
   title: string = "";
@@ -75,6 +77,10 @@ export class AddTaskComponent implements OnInit, OnDestroy {
         }
       );
       this.clearFields();
+      this.success = true;
+      setTimeout(() => {
+        this.success = false;
+      }, 5000);
     }
   };
   ngOnDestroy(): void {

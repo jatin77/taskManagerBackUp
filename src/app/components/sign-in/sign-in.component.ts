@@ -35,8 +35,8 @@ export class SignInComponent implements OnInit {
         response => {
           console.log(response, "success");
           localStorage.setItem("token", response.token);
-          this.router.navigate(["/allTask"]);
           this.hello = false;
+          this.router.navigate(["/allTask"]);
         },
         error => {
           console.log("error");

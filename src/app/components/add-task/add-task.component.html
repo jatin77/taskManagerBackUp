@@ -3,6 +3,13 @@
 
   <form class="form" (ngSubmit)="onSubmit()">
     <app-error *ngIf="error"></app-error>
+
+    <p
+      *ngIf="success"
+      class=" bg-success error text-center my-1 text-white py-1"
+    >
+      Your task is added successfully
+    </p>
     <div class="form-group">
       <input name="title" [(ngModel)]="title" type="text" placeholder="Task" />
     </div>

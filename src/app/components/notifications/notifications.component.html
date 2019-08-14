@@ -1,15 +1,26 @@
 <div class="container m">
-  <h1 class="text-center">Your <span class="text-blue">Notifications</span></h1>
+  <h1 class="text-center">
+    Your <span class="text-blue">Notification's</span>
+  </h1>
+
   <div class="container-sm">
-    <div class="card ">
-      <div class="card-footer my-1 flex flex-space-btwn">
-        <span>Total assigned task</span>
-        <span class="text-right text-blue">23</span>
+    <ng-container
+      *ngFor="let notification of notifications; trackBy: trackByFunction"
+    >
+      <div class="card ">
+        <div class="card-content">
+          {{ notification.task_name }}
+        </div>
+        <div class="card-footer text-right my-sm">
+          <p>
+            <small
+              >Assigned on<span class="text-blue">
+                {{ notification.created_on }}</span
+              ></small
+            >
+          </p>
+        </div>
       </div>
-      <div class="card-footer my-1 flex flex-space-btwn">
-        <span>Total distributed task</span>
-        <span class="text-right text-blue">03</span>
-      </div>
-    </div>
+    </ng-container>
   </div>
 </div>

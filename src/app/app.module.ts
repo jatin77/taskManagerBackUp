@@ -15,6 +15,7 @@ import { FormsModule } from "@angular/forms";
 import { ErrorComponent } from "./components/error/error.component";
 import { AuthGuard } from "./authGuard/auth.guard";
 import { AuthInterceptor } from "./authInterceptor/auth.interceptor";
+import { SuccessComponent } from './components/success/success.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { AuthInterceptor } from "./authInterceptor/auth.interceptor";
     UsersComponent,
     NotificationsComponent,
     UserDetailComponent,
-    ErrorComponent
+    ErrorComponent,
+    SuccessComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [
