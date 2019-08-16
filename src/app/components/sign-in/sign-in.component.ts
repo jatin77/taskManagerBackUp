@@ -22,9 +22,7 @@ export class SignInComponent implements OnInit {
     if (this.username === "" || this.password === "") {
       console.log("error");
       this.error = true;
-      setTimeout(() => {
-        this.error = false;
-      }, 5000);
+      this.setErrorToFalse();
     } else {
       const authDetail = {
         username: this.username,
@@ -41,12 +39,16 @@ export class SignInComponent implements OnInit {
         error => {
           console.log("error");
           this.error = true;
-          setTimeout(() => {
-            this.error = false;
-          }, 5000);
+          this.setErrorToFalse();
         }
       );
       this.clearFields();
     }
   };
+
+  setErrorToFalse() {
+    setTimeout(() => {
+      this.error = false;
+    }, 5000);
+  }
 }

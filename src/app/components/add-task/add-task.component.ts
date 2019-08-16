@@ -67,6 +67,10 @@ export class AddTaskComponent implements OnInit, OnDestroy {
       this.taskService.addTask(task).subscribe(
         response => {
           console.log("task assigned", task);
+          this.success = true;
+          setTimeout(() => {
+            this.success = false;
+          }, 5000);
         },
         error => {
           console.log("error", task);
@@ -77,10 +81,6 @@ export class AddTaskComponent implements OnInit, OnDestroy {
         }
       );
       this.clearFields();
-      this.success = true;
-      setTimeout(() => {
-        this.success = false;
-      }, 5000);
     }
   };
   ngOnDestroy(): void {
